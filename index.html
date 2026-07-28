@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Anime Ledger — r/anime's Top 500</title>
+<meta name="description" content="Browse, filter, search, and star r/anime's community-voted top 500 favorite anime by demographic and genre." />
+
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Ledger" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#efeee9" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14181a" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,680;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l2.85 6.53 7.1.62-5.38 4.68 1.62 6.97L12 16.6l-6.19 3.8 1.62-6.97-5.38-4.68 7.1-.62L12 1.6z"/></svg>
+    <div class="brand-text">
+      <h1>The Anime Ledger</h1>
+      <p>r/anime's community-voted top 500, ranked &amp; tagged</p>
+    </div>
+  </div>
+  <label class="search" for="search-input">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="search-input" type="search" inputmode="search" placeholder="Search 500 titles…" autocomplete="off" />
+  </label>
+</header>
+
+<nav class="filterbar" aria-label="Filters">
+  <div class="chip-row" id="demo-chips" data-group="demographic" aria-label="Filter by demographic"></div>
+  <div class="chip-row" id="genre-chips" data-group="genre" aria-label="Filter by genre"></div>
+  <div class="chip-row controls-row">
+    <button class="chip star-toggle" id="starred-toggle" type="button" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l2.85 6.53 7.1.62-5.38 4.68 1.62 6.97L12 16.6l-6.19 3.8 1.62-6.97-5.38-4.68 7.1-.62L12 1.6z"/></svg>
+      My picks
+    </button>
+    <div class="select-wrap">
+      <select id="sort-select" aria-label="Sort by">
+        <option value="rank">Sort · Rank</option>
+        <option value="points">Sort · Points</option>
+        <option value="title">Sort · Title A–Z</option>
+      </select>
+    </div>
+    <button class="chip clear-chip" id="clear-filters" type="button">Clear filters</button>
+  </div>
+</nav>
+
+<div class="status-row">
+  <span id="result-count" aria-live="polite">Loading dataset…</span>
+</div>
+
+<main id="list" class="list"></main>
+
+<p id="empty-state" class="empty-state" hidden>No titles match these filters. <button id="empty-clear" type="button">Clear filters</button></p>
+
+<footer class="footer">
+  <p>Data: r/anime community favorites poll, 500 titles. Demographic &amp; genre tags cross-referenced against MyAnimeList where available. Cover art &amp; synopses via <a href="https://anilist.co" target="_blank" rel="noopener">AniList</a>.</p>
+  <p class="footer-sub">Installable — add to your home screen for the full-screen app.</p>
+</footer>
+
+<div id="install-toast" class="install-toast" hidden>
+  <span>Install The Anime Ledger for offline, full-screen browsing.</span>
+  <div class="install-toast-actions">
+    <button id="install-btn" type="button">Install</button>
+    <button id="install-dismiss" type="button" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>

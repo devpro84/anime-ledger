@@ -1,0 +1,8 @@
+.DS_Store
+.claude/
+tools/__pycache__/
+tools/mal_cache.json
+tools/fetch_mal.log
+tools/anilist_cache.json
+tools/fetch_anilist.log
+tools/*.tmp
